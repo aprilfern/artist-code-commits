@@ -1,0 +1,18 @@
+body{
+  background-color: #D8CFFF;
+}
+
+.container{
+  background-color: #05001A;
+  height: 80%;
+  width: 80%;
+  position: relative;
+  left: 10%;
+  top: 10%;
+}
+
+.container .title{
+  color: #D8CFFF;
+  text-align: center;
+  font-size: 80px;
+}
