@@ -15,84 +15,78 @@ body{
   position: relative;
 }
 
-.taurus .star{
+.star {
   background-color: white;
   width: 5px;
   height: 5px;
   position: absolute;
 }
 
-.orion .star{
-  background-color: white;
+.star::after{
+  content: "";
   width: 5px;
   height: 5px;
-  position: absolute;
-}
-
-.aquila .star{
-  background-color: white;
-  width: 5px;
-  height: 5px;
-  position: absolute;
-}
-
-.taurus .star::after{
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  transform: rotate(45deg);
-  position: absolute;
-}
-
-.orion .star::after{
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  transform: rotate(45deg);
-  position: absolute;
-}
-
-.aquila .star::after{
-  content: "";
-  width: 100%;
-  height: 100%;
   background-color: white;
   transform: rotate(45deg);
   position: absolute;
 }
 
 .taurus:hover .star{
-  transform: scale(4);
-  transition-duration: 0.5s;
   background-color: #CCFFEA;
+  animation: grow 0.5s ease-in-out forwards, spin 5s linear infinite 1s;
 }
 
 .orion:hover .star{
-  transform: scale(4);
-  transition-duration: 0.5s;
   background-color: #E8CCFF;
+  animation: grow 0.5s ease-in-out forwards, spin 5s linear infinite 1s;
 }
 
 .aquila:hover .star{
-  transform: scale(4);
-  transition-duration: 0.5s;
   background-color: #FFCCE9;
+  animation: grow 0.5s ease-in-out forwards, spin 5s linear infinite 1s;
 }
 
 .taurus:hover .star::after{
-  transition-duration: 0.5s;
   background-color: #CCFFEA;
 }
 
 .orion:hover .star::after{
-  transition-duration: 0.5s;
   background-color: #E8CCFF;
 }
 
 .aquila:hover .star::after{
-  transition-duration: 0.5s;
   background-color: #FFCCE9;
+}
+
+@keyframes grow{
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(4);
+  }
+}
+
+@keyframes spin{
+  0% {
+    transform: scale(4) rotate(0deg);
+    box-shadow: 0 0 0px white, 0 0 0px white;
+  }
+  25% {
+    transform: scale(4) rotate(90deg);
+    box-shadow: 0 0 10px purple, 0 0 10px purple;
+  }
+  50% {
+    transform: scale(4) rotate(180deg);
+    box-shadow: 0 0 20px red, 0 0 20px red;
+  }
+  75% {
+    transform: scale(4) rotate(270deg);
+    box-shadow: 0 0 10px blue, 0 0 10px blue;
+  }
+  100% {
+    transform: scale(4) rotate(360deg);
+    box-shadow: 0 0 0px white, 0 0 0px white;
+  }
 }
 
