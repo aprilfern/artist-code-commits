@@ -21,7 +21,7 @@ body{
   height: 7px;
   position: absolute;
   scale: 1;
-  transition: scale 2s ease-out;
+  transition: scale 3s ease-out;
 }
 
 .star::after{
@@ -36,28 +36,35 @@ body{
 .star:hover {
   scale: 3;
   transition-duration: 0.5s;
-  animation: spin 5s linear infinite 1s;
+  animation: spin 5s linear infinite 2s;
 }
 
 .taurus:hover .star{
   background-color: #CCFFEA;
   scale: 3;
   transition-duration: 0.5s;
-  animation: spin 5s linear infinite 1s;
+  animation: spin 5s linear infinite 2s;
 }
 
 .orion:hover .star{
   background-color: #E8CCFF;
   scale: 3;
   transition-duration: 0.5s;
-  animation: spin 5s linear infinite 1s;
+  animation: spin 5s linear infinite 2s;
 }
 
 .aquila:hover .star{
   background-color: #FFCCE9;
   scale: 3;
   transition-duration: 0.5s;
-  animation: spin 5s linear infinite 1s;
+  animation: spin 5s linear infinite 2s;
+}
+
+.hercules:hover .star{
+  background-color: #FFCCE9;
+  scale: 3;
+  transition-duration: 0.5s;
+  animation: spin 5s linear infinite 2s;
 }
 
 .taurus:hover .star::after{
@@ -70,6 +77,10 @@ body{
 
 .aquila:hover .star::after{
   background-color: #FFCCE9;
+}
+
+.hercules:hover .star::after{
+  background-color: #FAE9C3;
 }
 
 @keyframes spin{
