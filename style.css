@@ -6,13 +6,29 @@ body{
   justify-content: center;
 }
 
-.northern-hemisphere{
+.northern-hemisphere {
   background-color: transparent;
   border: 1px solid white;
   width: 100vh;
   height: 100vh;
   border-radius: 50%;
   position: relative;
+}
+
+.answer-box {
+  opacity: 0%;
+  margin: 10px 10px 10px 10px;
+  padding: 10px;
+  width: auto;
+  height: 5vh;
+  left: 30px;
+  background-color: white;
+  position: fixed;
+  transform: translateX(-1000%);
+  z-index: 1;
+  
+  font-size: 20px;
+  text-align: center;
 }
 
 .star {
@@ -22,9 +38,10 @@ body{
   position: absolute;
   scale: 1;
   transition: scale 3s ease-out;
+  z-index: 999;
 }
 
-.star::after{
+.star::after {
   content: "";
   width: 7px;
   height: 7px;
@@ -39,51 +56,71 @@ body{
   animation: spin 5s linear infinite 1s;
 }
 
-.taurus:hover .star{
+.taurus:hover .answer-box {
+  opacity: 30%;
+  transform: translateX(0);
+}
+
+.orion:hover .answer-box {
+  opacity: 30%;
+  transform: translateX(0);
+}
+
+.aquila:hover .answer-box {
+  opacity: 30%;
+  transform: translateX(0);
+}
+
+.hercules:hover .answer-box {
+  opacity: 30%;
+  transform: translateX(0);
+}
+
+.taurus:hover .star {
   background-color: #CCFFEA;
   scale: 3;
   transition-duration: 0.5s;
   animation: spin 5s linear infinite 2s;
 }
 
-.orion:hover .star{
+.orion:hover .star {
   background-color: #E8CCFF;
   scale: 3;
   transition-duration: 0.5s;
   animation: spin 5s linear infinite 2s;
 }
 
-.aquila:hover .star{
+.aquila:hover .star {
   background-color: #FFCCE9;
   scale: 3;
   transition-duration: 0.5s;
   animation: spin 5s linear infinite 2s;
 }
 
-.hercules:hover .star{
+.hercules:hover .star {
   background-color: #FFCCE9;
   scale: 3;
   transition-duration: 0.5s;
   animation: spin 5s linear infinite 2s;
 }
 
-.taurus:hover .star::after{
+.taurus:hover .star::after {
   background-color: #CCFFEA;
 }
 
-.orion:hover .star::after{
+.orion:hover .star::after {
   background-color: #E8CCFF;
 }
 
-.aquila:hover .star::after{
+.aquila:hover .star::after {
   background-color: #FFCCE9;
 }
 
-.hercules:hover .star::after{
+.hercules:hover .star::after {
   background-color: #FAE9C3;
 }
 
-@keyframes spin{
+@keyframes spin {
   0% {
     transform: rotate(0deg);
     box-shadow: 0 0 0px white, 0 0 0px white;
