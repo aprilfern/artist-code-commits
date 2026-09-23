@@ -36,7 +36,7 @@ body{
 .star:hover {
   scale: 3;
   transition-duration: 0.5s;
-  animation: spin 5s linear infinite 2s;
+  animation: spin 5s linear infinite 1s;
 }
 
 .taurus:hover .star{
