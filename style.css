@@ -17,33 +17,47 @@ body{
 
 .star {
   background-color: white;
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
   position: absolute;
+  scale: 1;
+  transition: scale 2s ease-out;
 }
 
 .star::after{
   content: "";
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
   background-color: white;
   transform: rotate(45deg);
   position: absolute;
 }
 
+.star:hover {
+  scale: 3;
+  transition-duration: 0.5s;
+  animation: spin 5s linear infinite 1s;
+}
+
 .taurus:hover .star{
   background-color: #CCFFEA;
-  animation: grow 0.5s ease-in-out forwards, spin 5s linear infinite 1s;
+  scale: 3;
+  transition-duration: 0.5s;
+  animation: spin 5s linear infinite 1s;
 }
 
 .orion:hover .star{
   background-color: #E8CCFF;
-  animation: grow 0.5s ease-in-out forwards, spin 5s linear infinite 1s;
+  scale: 3;
+  transition-duration: 0.5s;
+  animation: spin 5s linear infinite 1s;
 }
 
 .aquila:hover .star{
   background-color: #FFCCE9;
-  animation: grow 0.5s ease-in-out forwards, spin 5s linear infinite 1s;
+  scale: 3;
+  transition-duration: 0.5s;
+  animation: spin 5s linear infinite 1s;
 }
 
 .taurus:hover .star::after{
@@ -58,34 +72,25 @@ body{
   background-color: #FFCCE9;
 }
 
-@keyframes grow{
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(4);
-  }
-}
-
 @keyframes spin{
   0% {
-    transform: scale(4) rotate(0deg);
+    transform: rotate(0deg);
     box-shadow: 0 0 0px white, 0 0 0px white;
   }
   25% {
-    transform: scale(4) rotate(90deg);
-    box-shadow: 0 0 10px purple, 0 0 10px purple;
+    transform: rotate(90deg);
+    box-shadow: 0 0 10px yellow, 0 0 10px yellow;
   }
   50% {
-    transform: scale(4) rotate(180deg);
+    transform: rotate(180deg);
     box-shadow: 0 0 20px red, 0 0 20px red;
   }
   75% {
-    transform: scale(4) rotate(270deg);
+    transform: rotate(270deg);
     box-shadow: 0 0 10px blue, 0 0 10px blue;
   }
   100% {
-    transform: scale(4) rotate(360deg);
+    transform: rotate(360deg);
     box-shadow: 0 0 0px white, 0 0 0px white;
   }
 }
