@@ -1,3 +1,4 @@
+/* Centers items and colors background */
 body{
   background-color: #080024;
   display: flex;
@@ -6,6 +7,9 @@ body{
   justify-content: center;
 }
 
+/* Creates a circle with only the border visible and fits
+in the middle of a person's screen to recreate the northern
+hemisphere */
 .northern-hemisphere {
   background-color: transparent;
   border: 1px solid white;
@@ -15,6 +19,9 @@ body{
   position: relative;
 }
 
+/* Creates a box outside of the screen to prevent it from
+interfering with user interaction of the stars 
+- opacity: changes the visibility of the answer-box */
 .answer-box {
   opacity: 0%;
   margin: 10px 10px 10px 10px;
@@ -31,6 +38,8 @@ body{
   text-align: center;
 }
 
+/* Creates a square that is the base of a star that overlaps
+with a psuedo-element square to create an 8-sided star */
 .star {
   background-color: white;
   width: 7px;
@@ -39,8 +48,22 @@ body{
   scale: 1;
   transition: scale 3s ease-out;
   z-index: 999;
+  
+  box-shadow:
+    0 0 10px 2px white,
+    -15px 0 10px -2px white,
+    15px 0 10px -2px white,
+    0 -15px 10px -2px white,
+    0 15px 10px -2px white;
 }
 
+/* Creates a square connected to the base of the star to create
+an 8-sided star:
+- ::after : creates another element that is connected to the star
+class (I could have also used ::before to achieve my goal of creating
+an 8-sided star) 
+- content: inserts content in css but I used an empty string so that
+the psuedo-element would show up on the website */
 .star::after {
   content: "";
   width: 7px;
@@ -48,34 +71,61 @@ body{
   background-color: white;
   transform: rotate(45deg);
   position: absolute;
+  
+  box-shadow:
+    -15px 0 10px -2px white,
+    15px 0 10px -2px white,
+    0 -15px 10px -2px white,
+    0 15px 10px -2px white;
 }
 
+/* When you hover over a star without a constellation it grows,
+then spins and glows different colors */
 .star:hover {
   scale: 3;
   transition-duration: 0.5s;
   animation: spin 5s linear infinite 1s;
 }
 
+/* When you hover over a star in the taurus constellation the
+answer-box appears on the top left of the screen telling you
+the constellation you found 
+- opacity: changes the visibility of the answer-box */
 .taurus:hover .answer-box {
   opacity: 30%;
   transform: translateX(0);
 }
 
+/* When you hover over a star in the orion constellation the
+answer-box appears on the top left of the screen telling you
+the constellation you found 
+- opacity: changes the visibility of the answer-box */
 .orion:hover .answer-box {
   opacity: 30%;
   transform: translateX(0);
 }
 
+/* When you hover over a star in the aquila constellation the
+answer-box appears on the top left of the screen telling you
+the constellation you found 
+- opacity: changes the visibility of the answer-box */
 .aquila:hover .answer-box {
   opacity: 30%;
   transform: translateX(0);
 }
 
+/* When you hover over a star in the hercules constellation the
+answer-box appears on the top left of the screen telling you
+the constellation you found 
+- opacity: changes the visibility of the answer-box */
 .hercules:hover .answer-box {
   opacity: 30%;
   transform: translateX(0);
 }
 
+/* When you hover over a star in the taurus constellation all 
+the stars in the constellation grow,then they spin and 
+glow different colors */
 .taurus:hover .star {
   background-color: #CCFFEA;
   scale: 3;
@@ -83,6 +133,9 @@ body{
   animation: spin 5s linear infinite 2s;
 }
 
+/* When you hover over a star in the orion constellation all 
+the stars in the constellation grow,then they spin and 
+glow different colors */
 .orion:hover .star {
   background-color: #E8CCFF;
   scale: 3;
@@ -90,6 +143,9 @@ body{
   animation: spin 5s linear infinite 2s;
 }
 
+/* When you hover over a star in the aquila constellation all 
+the stars in the constellation grow,then they spin and 
+glow different colors */
 .aquila:hover .star {
   background-color: #FFCCE9;
   scale: 3;
@@ -97,29 +153,45 @@ body{
   animation: spin 5s linear infinite 2s;
 }
 
+/* When you hover over a star in the hercules constellation all 
+the stars in the constellation grow,then they spin and 
+glow different colors */
 .hercules:hover .star {
-  background-color: #FFCCE9;
+  background-color: #FAE9C3;
   scale: 3;
   transition-duration: 0.5s;
   animation: spin 5s linear infinite 2s;
 }
 
+/* When you hover over a star in the taurus constellation the
+psuedo-element square changes to the same color the base of the
+star changes into when hovered */
 .taurus:hover .star::after {
   background-color: #CCFFEA;
 }
 
+/* When you hover over a star in the orion constellation the
+psuedo-element square changes to the same color the base of the
+star changes into when hovered */
 .orion:hover .star::after {
   background-color: #E8CCFF;
 }
 
+/* When you hover over a star in the aquila constellation the
+psuedo-element square changes to the same color the base of the
+star changes into when hovered */
 .aquila:hover .star::after {
   background-color: #FFCCE9;
 }
 
+/* When you hover over a star in the hercules constellation the
+psuedo-element square changes to the same color the base of the
+star changes into when hovered */
 .hercules:hover .star::after {
   background-color: #FAE9C3;
 }
 
+/* rotates the stars and makes it glow different colors */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
